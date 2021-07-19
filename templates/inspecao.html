@@ -1,0 +1,795 @@
+{% extends 'index.html' %}
+{% block content %}
+
+ 
+<div class="container-fluid">
+  <form action="/inspecao" method="POST">
+    <div class="row row-cols-2">
+        <div class="col">
+          <span class="input-group-text" id="basic-addon1">OS:</span>
+          <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="os_insp">
+          <hr>
+          <span class="input-group-text" id="basic-addon1">OP:</span>
+          <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="op_insp">
+          <hr>
+          <span class="input-group-text" id="basic-addon2">MODELO:</span>
+          <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="modelo_insp">
+          <hr>
+          <span class="input-group-text text-wrap" id="basic-addon3">CONVERSOR DE TORQUE:</span>
+          <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="conversor_insp">
+          <hr>
+        </div>
+
+        <div class="col">
+          <span class="input-group-text" id="basic-addon4">DATA:</span>
+          <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="data_insp">
+          <hr>
+          <span class="input-group-text" id="basic-addon5">SÉRIE:</span>
+          <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="serie_insp">
+          <hr>
+          <span class="input-group-text text-wrap" id="basic-addon5">NOME DO TÉCNICO:</span>
+          <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="nome_insp">
+          <hr>
+        </div>
+        
+
+                <div class="col"> <!---- PRIMEIRA CHECK DA COL ESQUERDA INICIO---->
+                        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">CARCAÇA PRINCIPAL</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carc_p_trincas" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Trinca ou quebras</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carc_p_rolamentos" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Rolamentos</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carc_p_alojamento" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Alojamentos dos pistões das cintas F2 e F3</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carc_p_alojamento_ac" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Alojamentos dos acumulador</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carc_p_alojamento_rts" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Alojamentos dos retentor de saída</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carc_p_fhpcf2f3" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Furo da haste dos pistões das cintas F2 e F3</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carc_p_capa_rolam" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Capas dos rolamentos</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carc_p_guias" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Guias</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carc_p_superficies_vedacao" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Superfícies de Vedação</label>
+                        </div>
+                        <hr>
+
+                        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">BOMBA DE ÓLEO</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="bomb_sce" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Superfícies de contato com as engrenagens</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="bomb_guias" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Guias</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="bomb_riscos" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Riscos</label>
+                        </div>
+                        <p>Controle Dimensional (54,520mm - 54,530mm)</p>
+                        <div class="input-group input-group-sm sm-3" style="margin-top: -20px; padding-bottom: 10px;">
+                            <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; " class="bg-secondary text-white">Desgaste da Bucha</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="bomb_desgaste_b">
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="bomb_dcb" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Desgaste na chapa da bomba</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="bomb_demm" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Desgaste nas engrenagens motora e movida</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="bomb_elaem" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado da "Lingueta" de arraste da engrenagem motora</label>
+                        </div> <!--PRIMEIRO CHECK DA PAGINA ESQUERDA FIM-->
+
+                        <hr><!--SEGUNDO CHECK LADO ESQUERDO INICIO-->
+                        <p class="text-wrap">Efetuar o controle dimensional - 35,180mm - 35,225mm</p> 
+                        <div class="input-group input-group-sm sm-3" style="margin-top: -20px; padding-bottom: 10px;">
+                            <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Desgaste da Bucha</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="bomb_desgaste">
+                        </div>
+                        <hr>
+
+                        <span class="input-group-text text-wrap" id="basic-addon3">Desgaste na ponta do eixo.</span>
+                            <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="bomb_desgaste_eixo">
+                        <hr>
+
+                        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Tambor F3</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tamb_descoloracao" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Descoloração (superaquecimento).</label>
+                        </div>
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tamb_scf" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Superfície de contato com a cinta de freio</label>
+                        </div>
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tamb_scb" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Superfície de contato com as buchas</label>
+                        </div>
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tamb_cav" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Contato com os anéis de vedação</label>
+                        </div>
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tamb_estrias" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estrias</label>
+                        </div> 
+                        <hr>
+
+                        <p>Efetuar o controle dimensional - 26,000mm - 26,090mm</p>
+                        <div class="input-group input-group-sm sm-3" style="margin-top: -20px; padding-bottom: 10px;">
+                            <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Desgaste da Bucha</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="tamb_desgaste">
+                        </div>
+                        <hr>
+
+                        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Tambor F2</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tamb2_descoloracao" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Descoloração (superaquecimento).</label>
+                        </div>
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tamb2_scf" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Superfície de contato com a cinta de freio</label>
+                        </div>
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tamb2_d_quebrados" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Dentes quebrados</label>
+                        </div>
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tamb2_rad" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Rolamento axial danificado</label>
+                        </div>
+
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tamb2_estrias" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estrias</label>
+                        </div> <!-- SEGUNDO CHECK LADO ESQUERDO FIM -->
+
+                        <!--TERCEIRO CEHCK LADO ESQUERDO INICIO-->
+                        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Diferencial</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="dife_trincas" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Trincas ou quebras</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"  name="dife_rolamento" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Rolamento</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="dife_sca" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Superfícies de contato com as arruelas</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="dife_estrias" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estrias</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="dife_daep" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Desgaste nas arruelas de encosto das planetárias e satélites</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="dife_des" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Desgaste no eixo dos satélites</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="dife_dcr" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Desgaste na capa do rolamento</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="dife_ds" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Desgaste nos satélites</label>
+                        </div>
+                        <hr>
+
+                        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Suporte da mola de retorno F1</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="suportem_derretimento" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Derretimento</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="suportem_deformação" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Deformação</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="surpotem_empenamento" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Empenamento</label>
+                        </div>             
+                        <hr>
+
+                        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Hastes dos pistões F2 e F3</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="hast_dhp" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Desgaste da haste em posições opostas</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="hast_tma" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Componentes: Traves, mola e apoio de mola</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="hast_oxidacao" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Oxidação</label>
+                        </div>
+                        <hr>
+
+                        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Discos de embreagem E1, E2 e F1</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="disc_queima" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Queima</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="disc_desg" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Desgaste</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="disc_empen" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Empenamento</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="disc_deform" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Deformação</label>
+                        </div>
+                        <hr>
+
+                        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Pistão do acumulador da tampa traseira</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="pistao_tq" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Trincas ou quebras</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="pistao_desgaste" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Desgaste</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="pistao_cas" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Canais dos anéis de segmento</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="pistao_em" value="Sim" >
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado da mola</label>
+                        </div>
+                        <hr><!--TERCEIRO CHECK LADO ESQUERDO FIM-->     
+
+                        <!--QUARTO CHECK LADO ESQUERDO INICIO--> 
+                        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Caixa de conectores</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="caixa_c_quebras" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Quebras</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="caixa_c_trincas" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Trincas</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="caixa_c_ft" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Funcionamento da trava</label>
+                        </div>
+                        <hr>
+
+                        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Sensor de rotação de entrada</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensor_derretimento" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Derretimento</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensor_estado_cabo" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado do cabo</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensor_e_conector"value="Sim" >
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado do conector</label>
+                        </div>             
+                        <hr>
+
+                        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Sensor de pressão</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensor_p_trincas" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Trincas ou Quebras</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensor_p_presencao" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Presença de esfera</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensor_p_estado" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado do cabo</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensor_p_estado_conector" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado do conector</label>
+                        </div>
+                        <hr>
+
+                        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Chapa Defletora de óleo do diferencial</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="chapa_empenamento" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Empenamento</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="chapa_amassados" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Amassados</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="chapa_oxidacao" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Oxidação</label>
+                        </div>
+                        <hr><!--QUARTO CHECK LADO ESQUERDO FIM-->   
+                    </div>
+
+                <div class="col"> <!--PRIMEIRO CHECK LADO DIREITO INICIO-->
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">CAPA SECA</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="capa_trincas" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Trinca ou quebras</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="capa_rosca" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Roscas</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="capa_rolamentos"value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Capas dos rolamentos</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="capa_abo" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Alojamento da bomba óleo</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="capa_ars" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Alojamento do retentor e saida.</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="capa_sv" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Superfície de vedação</label>
+                        </div>
+                    <hr>
+
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">TAMPA TRASEIRA</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tampa_tq" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Trinca ou quebras</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tampa_rosca" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Roscas</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tampa_apf1" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Alojamento do pistão F1.</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tampa_svj" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Superfície de vedação da junta</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tampa_scb" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Superfícies de contato com a bucha</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tampa_aneis" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Anéis NDTH: falha 1 ou 2 anéis</label>
+                        </div>
+                    <hr>
+                    
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">PLACA DA BOMBA</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="placa_trincas" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Trinca ou quebras</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="placa_roscas" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Roscas</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="placa_riscos" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Riscos</label>
+                        </div>
+                    <p>Controle Dimensional A -(26.021mm - 26.090mm) / B - (23.621mm - 23.690mm)</p>
+                        <div class="input-group input-group-sm sm-3" style="margin-top: -20px; padding-bottom: 10px;">
+                            <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Desgaste da Bucha</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="placa_desgaste">
+                        </div> <!--PRIMEIRO CHECK LADO DIREITO FIM-->
+                    <hr>
+
+                    <!--SEGUNDO CEHCK LADO DIREITO INICIO-->
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Cubo do E2</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="cubo_scbs" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Superficies de Contato com Buchas</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="cubo_estrias" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estrias</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="cubo_ram" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Rolamento axial e molas</label>
+                        </div>
+                    <hr>
+
+                    <p>Efetuar o controle dimensional - 26,000mm - 26,050mm</p>
+                        <div class="input-group input-group-sm sm-3" style="margin-top: -20px; padding-bottom: 10px;">
+                            <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Desgaste da Bucha</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="cubo_dba">
+                        </div>
+                    <hr>
+
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Conjunto de planetárias (PS2)</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="conjunto_descolo" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Descoloração(superaquecimento)</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="conjunto_dentes" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Dentes quebrados</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="conjunto_roscas" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Roscas Danificadas</label>
+                        </div>
+                
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="conjunto_sccr" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Superfície de contato com as capas dos rolamentos</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="conjunto_dr" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Desgaste dos rolamentos</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="conjunto_oxidacao" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Oxidação</label>
+                        </div> 
+                    <hr>
+
+                    <p>Efetuar o controle dimensional - 41,200mm - 41,275mm</p>
+                        <div class="input-group input-group-sm sm-3" style="margin-top: -20px; padding-bottom: 10px;">
+                            <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; " class="bg-secondary text-white">Desgaste da Bucha</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="conjunto_desgaste">
+                        </div>
+                    <hr>
+
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Tambor E2</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tambor_descoloracao" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Descoloração - (superaquecimento)</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tambor_entalhe" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Entalhe de encaixe dos discos de embreagem (Deformação)</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tambor_estrias" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estrias</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tambor_alojamento" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Alojamento do pistão</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tambor_sat" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Sup de apoio da trava</label>
+                        </div> <!--SEGUNDO CEHCK LADO DIREITO FIM-->
+                    
+                    <!--TERCEIRO CHECK LADO DIREITO INICIO-->
+                    <hr>
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Pinhão</p>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="pinhao_rolamentos" value="Sim">
+                        <label class="form-check-label" for="flexSwitchCheckDefault">Rolamentos</label>
+                    </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="pinhao_gr" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Gaiolas dos Rolamento</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="pinhao_ram" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Rolamento axial e molas</label>
+                        </div>
+                    <hr>
+
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Emgrenagem solar</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="emgrenagem_descoloracao" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Descoloração (superaquecimento)</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="emgrenagem_estrias" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estrias</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="emgrenagem_dq" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Dentes quebrados</label>
+                        </div>
+                    <hr>
+
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Suporte de engrenagem solar</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="suporte_e_descoloracao" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Descoloração (superaquecimento)</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="suporte_e_eede" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Entalhe de encaixe dos discos de embreagem (Deformação)</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="suporte_e_dq" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Dentes quebrados</label>
+                        </div>
+                    <hr>
+
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Cintas F2 e F3</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="cinta_f_ef" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado da fibra</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="cinta_f_craf" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Cabeças dps rebites abaixo do mat. De fricção</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="cinta_f_queima" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Queima</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="cinta_f_deformacao" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Deformação</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="cinta_f_ancoragem"  value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Ancoragem da cinta</label>
+                        </div>
+                    <hr>
+
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Rolamentos axiais e calços</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="rolamento_dcp" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Derretimento dos calços plásticos</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="rolamento_qpr" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Quebra das pistas dos rolamentos</label>
+                        </div>
+                    <hr> <!--TERCEIRO CHECK LADO DIREITO FIM-->
+                    
+                    <!--QUARTO CHECK LADO DIREITO INICIO-->
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Controle de débito (vazão) do trocador de calor</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="control_trincas" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Trincas ou quebras</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="control_estados" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado do cabo</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="control_estado" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado do conector</label>
+                        </div>
+                    
+                        <hr>
+
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Respiro</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="respiro_rasgos" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Rasgos</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="respiro_presenca" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Presença da tampa</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="respiro_deformacao" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Deformação</label>
+                        </div>
+                        <hr> 
+                        
+                    <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Chave seletora (CMF)</p>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="chave_sc_quebras" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Quebras</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="chave_sc_vdfd" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Verificar a data de fabricação antes de 0063 - Descartar info.Nº24</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="chave_sc_ec" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado do cabo</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="chave_sc_ect" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado do conector</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="chave_sc_etpa" value="Sim">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Estado dos terminais para ajuste</label>
+                        </div>
+                        <hr> <!--QUARTO CHECK LADO DIREITO FIM-->
+
+                </div>
+
+            </div>   
+
+                
+        </div>    
+    
+            <div class="container-fluid">
+                <h4 style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white"> COMPONENTES</h4>
+                <div class="row row-cols-2">
+                    <div class="col"><!-- INICIO DA COLUNA -->
+                            <div class="mb-3 input-group-prepend">
+                                <span class="input-group-text">PS2 (41,200mm - 41,275mm)</span>  
+                            </div>
+                    
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Insira o valor aqui - Medida em mm" name="compon_ps2">
+                            </div>
+                            <hr>
+                    
+                            <div class="mb-3 input-group-prepend">
+                                <span class="input-group-text">Eixo de Entrada (35,180mm - 35,225mm)</span>
+                            </div>
+                    
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Insira o valor aqui - Medida em mm" name="compon_eixoin">
+                            </div>
+                            <hr>
+                    
+                            <div class="mb-3 input-group-prepend">
+                                <span class="input-group-text">Bomba (54,520mm - 35,225mm)</span>
+                            </div>
+                    
+                            <div class="mb-3">
+                                    <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Insira o valor aqui - Medida em mm" name="compon_bomba5">
+                            </div>
+                            <hr>
+                    
+                            <div class="mb-3 input-group-prepend">
+                                <span class="input-group-text">A-) Bomba (26,021mm - 26,090mm)</span>
+                            </div>
+                    
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Insira o valor aqui - Medida em mm" name="compon_bomb2">
+                            </div>
+                            <hr>
+                    
+                            <div class="mb-3 input-group-prepend">
+                                <span class="input-group-text">B-) Bomba (23,621mm - 23,690mm)</span>
+                            </div>
+                    
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Insira o valor aqui - Medida em mm" name="compon_bomb23">
+                            </div>
+                            <hr>
+                    </div><!-- FIM DA COLUNA -->
+                    <div class="col"><!-- INICIO DA COLUNA -->
+                            <div class="mb-3 input-group-prepend">
+                                <span class="input-group-text">E2 N1 (lado da estria) - (26,000mm - 26,050mm)</span>
+                            </div>
+                    
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Insira o valor aqui - Medida em mm" name="compon_n1">
+                            </div>
+                            <hr>
+                    
+                            <div class="mb-3 input-group-prepend">
+                                <span class="input-group-text">E2 N2 (26,000mm - 26,050mm)</span>
+                            </div>
+                    
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Insira o valor aqui - Medida em mm" name="compon_n2">
+                            </div>
+                            <hr>
+                    
+                            <div class="mb-3 input-group-prepend">
+                                <span class="input-group-text">F3 N1 (lado da estria) - (26,000mm - 26,090mm)</span>
+                            </div>
+                    
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Insira o valor aqui - Medida em mm" name="compon_f3n1">
+                            </div>
+                            <hr>
+                    
+                            <div class="mb-3 input-group-prepend">
+                                <span class="input-group-text">F3 N2 (26,000mm - 26,090mm)</span>
+                            </div>
+                    
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Insira o valor aqui - Medida em mm" name="compon_f3n2">
+                            </div>
+                            <hr>
+                    </div><!-- FIM DA COLUNA -->
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <h4 style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">AJUSTE</h4>
+                <div class="row row-cols-2">    
+
+                        <div class="col">
+                            <div class="mb-3 input-group-prepend">
+                                <span class="input-group-text text-wrap">Conjunto E1 - 1,00 - 1,40 mm</span>  
+                            </div>
+
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Inserir o valor aqui - Medida em mm" name="compon_e1">
+                            </div> 
+
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Visto Montador" name="compon_vist_montador1">
+                            </div> 
+
+                            <div class="mb-3 input-group-prepend">
+                                <span class="input-group-text text-wrap">Conjunto E2 - 1,90 - 2,00 mm</span>  
+                            </div>
+
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Inserir o valor aqui - Medida em mm" name="compon_e2">
+                            </div> 
+
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Visto Montador" name="compon_visit_montador2">
+                            </div> 
+
+                        </div>
+                        <div class="col">
+                            <div class="mb-3 input-group-prepend">
+                                <span class="input-group-text text-wrap">Eixo de entrada - (Folga axial) - 0,20 - 0,45mm</span>  
+                            </div>
+
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Inserir o valor aqui - Medida em mm" name="compon_eixo_axial">
+                            </div> 
+
+                            <div class="mb-3">
+                                <input type="text" class="form-control text-wrap" id="exampleFormControlInput1" placeholder="Visto Montador" name="compon_visit_montador3">
+                            </div> 
+                        </div>
+
+                </div>
+            </div>
+
+
+
+
+            <footer>
+            
+            <div class="d-flex flex-row-reverse">
+            <button type="submit" class="btn btn-primary">ENVIAR FORMULARIO</button>
+            </div>
+
+            </footer>
+  </form>
+
+{% endblock %}

@@ -1,0 +1,309 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<!-- Container Principal Formulario -->
+
+<div class="container-fluid">
+  <form action="/expedicao" method="POST" enctype="multipart/form-data" name="frm_expedicao" class="container-fluid">
+    <div class="row row-cols-2">
+  
+      <div class="col">
+        <span class="input-group-text" id="basic-addon1">OS:</span>
+        <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="osExpedicao">
+        <hr>
+        <span class="input-group-text" id="basic-addon2">OP:</span>
+        <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="opExpedicao">
+        <hr>
+        <span class="input-group-text" id="basic-addon2">MODELO:</span>
+        <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="modeloExpedicao">
+        <hr style="margin-top: 30px;">
+      </div>
+      
+      <div class="col">
+        <span class="input-group-text" id="basic-addon4">DATA:</span>
+        <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="dataExpedicao">
+        <hr>
+        <span class="input-group-text" id="basic-addon5">SÉRIE:</span>
+        <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="serieExpedicao">
+        <hr>
+        <span class="input-group-text text-wrap" id="basic-addon3">CONVERSOR DE TORQUE:</span>
+        <div class="form-check form-switch" style="margin-top: 10px;">
+          <input class="form-check-input" type="checkbox" id="conversorTorque" nome="conversorTorqueExpedicao" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <hr style="margin-top: 10px;">
+      </div>
+      
+      
+      <div class="col">
+      
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">PORCA DO CONVERSOR</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="porcaConversor_1" name="porcaConversor" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <hr>
+        
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">CHAPA DE INÉRCIA</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="chapaInercia" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        
+        <hr>  
+      
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">SENSOR ROTAÇÃO ENTRADA</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensorRotacaoEntrada" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">SENSOR ROTAÇÃO SAIDA</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensorRotacaoSaida" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensorRotacaoTampa" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Tampa</label>
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">SENSOR DE PRESSÃO</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensorPressao" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensorPressoaQuebrado" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Quebrado</label>
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">REGULADOR DE FLUXO</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="reguladorFluxo" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="reguladorQuebrado" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Quebrado</label>
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">TROCADOR DE CALOR</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="trocadorCalor" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="trocadorCalorAmassado" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Amassado</label>
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">SENSOR VELOCÍMETRO</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensorVelocimetro" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensorVelocimetroQuebrado" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Quebrado</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensorVelocimetroTampa" value="Sim"> 
+          <label class="form-check-label" for="flexSwitchCheckDefault">Tampa</label>
+        </div>
+        <hr>
+      
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">CHAVE SELETORA</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="chaveSeletora" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="chaveSeletoraQuebrado" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Quebrado</label>
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">SENSOR ROTAÇÃO MOTOR</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensorRotacaoMotor" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensorRotacaoMotorQuebrado" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Quebrado</label>
+        </div>
+        <hr>
+        
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">TUBO DA VARETA DE ÓLEO</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tuboVaretaOleo" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">CAIXA DE TRANSFERÊNCIA</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="caixaTransferencia" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">MANGUEIRAS / TUBO DE REFRIGERAÇÃO</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="mangueirasTubos" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">SENSORES EXTERNOS</p>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="sensoresExternos" value="Sim">
+          <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <hr>
+      </div>
+
+        <div class="col">
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">ALAVANCA SELETORA</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="alavancaSeletora" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">CAIXA DE CONECTORES</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="caixaConectores" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="caixaConectoresQuebrados" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Quebrado</label>
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">SUPORTE CX CONECTORES</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="suporteConectores" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">RESPIRO</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="respiro" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">BUJÃO DE NIVEL</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="bujaoNivel" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">SUPORTE CABO SELETOR</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="suporteCaboSeletor" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">GUIA DA CARCAÇA</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="guiaDaCarcaca" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <div class="mb-3">
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir a quantidade" name="guiaQuantidade">
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">PRISIONEIRO DA CARCAÇA</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="prisioneiroCarcaca" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">SUPORTE DO COXIM SUPERIOR</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="suporteCoximSuperior" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">SUPORTE DO COXIM INFERIOR</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="suporteCoximInferior" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">SUPORTE DE LEVANTAMENTO</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="suporteLevantamento" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">VARETA DE ÓLEO</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="varetaOleo" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">COXINS</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="coxins" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">CHICOTE EXTERNOS</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="chicoteExternos" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">EIXOS DE SAÍDA</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="eixosSaida" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+          </div>
+          <hr>
+        </div>
+    </div>
+
+    <footer>
+      <div class="container-fluid">  
+      <div class="row">
+      <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label" id="observacao">Observação</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="observacaoExpedicao"></textarea>
+
+      <label for="formFileMultiple" class="form-label" id="inserirFoto">Selecionar Fotor</label>
+      <input class="form-control" type="file" id="formFileMultiple" multiple name="inserirFoto1">
+      </div>
+      </div>
+      </div>
+
+      
+      <div class="d-flex flex-row-reverse">
+      <button type="submit" class="btn btn-primary">ENVIAR FORMULARIO</button> 
+      </div>
+      </footer>
+  </form> 
+</div>     
+{% endblock %}

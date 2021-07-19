@@ -1,0 +1,319 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<div class="container-fluid">
+  <form action="/desmontagem" method="POST" enctype="multipart/form-data" name="frm_desmontagem" class="container-fluid">
+    <div class="row row-cols-2">
+      <div class="col">
+        <span class="input-group-text" id="basic-addon1">OS:</span>
+        <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="os_desmontagem">
+        <hr>
+        <span class="input-group-text text-wrap" id="basic-addon3">OP:</span>
+        <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="op_desmontagem">
+        <hr>
+        <span class="input-group-text" id="basic-addon2">MODELO:</span>
+        <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="modelo_desmontagem">
+        <hr>
+      </div>
+      
+      
+      <div class="col">
+        <span class="input-group-text" id="basic-addon4">DATA:</span>
+        <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="data_desmontagem">
+        <hr>
+        <span class="input-group-text" id="basic-addon5">SÉRIE:</span>
+        <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="serie_desmontagem">
+        <hr>
+        <span class="input-group-text text-wrap" id="basic-addon3">CONVERSOR DE TORQUE:</span>
+        <input type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1" name="conver_torque_desmontagem">
+        <hr>
+      </div>
+
+      
+        <div class= "col"> 
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;"class="bg-secondary text-white">VAZAMENTO</p>
+          <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="vazamento_conversor_desmontagem" value="Sim">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Conversor</label>
+          </div>
+
+          <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="vazamento_carter_desmontagem" value="Sim">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Carter</label>
+          </div>
+
+          <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="vazamento_entre_carcacas_desmontagem" value="Sim">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Entre Carcaças</label>
+          </div>
+
+          <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="vazamento_saida_desmontagem" value="Sim">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Saídas</label>
+          </div>
+
+          <div class="input-group input-group-sm sm-3">
+              <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="vazamento_obs_desmontagem">
+          </div>
+
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">ÓLEO</p>
+          <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="oleo_limpo_desmontagem" value="Sim">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Limpo</label>
+          </div>
+
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="oleo_queimado_desmontagem" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Queimado</label>
+          </div>
+
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="oleo_contaminado_desmontagem" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Contaminado</label>
+          </div>
+
+          <div class="input-group input-group-sm sm-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="oleo_obs_desmontagem">
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">CONJUNTO DE EMBREAGEM DANIDICADO</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="ced_disco_aco_desmontagem" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Disco de Aço</label>
+          </div>
+
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="ced_disco_revestido_desmontagem" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Disco Revestido</label>
+          </div>
+
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="ced_gasto_desmontagem" value="Sim" >
+            <label class="form-check-label" for="flexSwitchCheckDefault">Gasto</label>
+          </div>
+
+          <div class="input-group input-group-sm sm-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="ced_obs_desmontagem">
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white" >PISTÕES</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="pistoes_rasgado_desmontagem" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">RASGADO</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="pistoes_gasto_desmontagem" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">GASTO</label>
+          </div>
+          <div class="input-group input-group-sm sm-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="pistoes_obs_desmontagem">
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white" >BOMBA DE ÓLEO</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="bdo_engregaem_quebrada_desmontagem" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Engrenagem Quebrada</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="bdo_desgaste_desmontagem" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Desgaste</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="bdo_bucha_rol_desmontagem" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Bucha / Rol.Danif</label>
+          </div>
+          <div class="input-group input-group-sm sm-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="bdo_obs_desmontagem">
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white" class="bg-secondary text-white" >PLANETÁRIOS</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="planetario_dentes_quebrado_desmontagem" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Dentes Quebrados</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="planetario_fundida_desmontagem" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Fundida</label>
+          </div>
+          <div class="input-group input-group-sm sm-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="planetario_obs_desmontagem">
+          </div>
+          <hr>
+
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white" >ROLAMENTOS/CALÇOS</p>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="rolamento_danificado_desmontagem" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Danificado</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="rolamento_danificado_quebrado" value="Sim">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Quebrado</label>
+          </div>
+          <div class="input-group input-group-sm sm-3">
+            <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+            <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="rolamento_obs_desmontagem">
+          </div>
+          <hr>
+        </div>
+
+        <div class='col'>
+
+            <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white" >CARTER</p>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carter_amassado_desmontagem" value="Sim">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Amassado</label>
+            </div>
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carter_quebrado_desmontagem" value="Sim">
+              <label class="form-check-label" for="flexSwitchCheckDefault">Quebrado</label>
+            </div>
+            <div class="input-group input-group-sm sm-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="carter_obs_desmontagem">
+            </div>
+            <hr>
+
+            <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">CARCAÇA DANIFICADA</p>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carcaca_dan_capa_seca_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Capa-seca</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carcaca_dan_principal_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Principal</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="carcaca_dan_tampa_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Tampa</label>
+            </div>
+            <div class="input-group input-group-sm sm-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="carcarca_dan_obs_desmontagem">
+            </div>
+            <hr>
+
+            <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white" >CINTA DE FREIO</p>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="cinta_freio_queimada_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Queimada</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="cinta_freio_quebrada_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Quebrada</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="cinta_freio_gasta_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Gasta</label>
+            </div>
+            <div class="input-group input-group-sm sm-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="cinta_freio_obs_desmontagem">
+            </div>
+            <hr>
+
+            <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white" >TAMBORES</p>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tambores_queimada_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Queimada</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tambores_quebrados_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Quebrada</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="tambores_gasta_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Gasta</label>
+            </div>
+            <div class="input-group input-group-sm sm-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="tambores_obs_desmontagem">
+            </div>
+            <hr>
+
+            <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white" >EIXOS/ ÁRVORES:</p>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="eixos_estrias_danificada_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Estrias danificada</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="eixos_ponta_danificada_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Ponta danificada</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="eixos_estrias_gasta_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Gasta</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="eixos_sup_vedacao_danif_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Superior Vedação danificada</label>
+            </div>
+            <div class="input-group input-group-sm sm-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="eixos_obs_desmontagem">
+            </div>
+            <hr>
+
+            <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">COROA / PINHÃO:</p>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="coroa_danificado_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Danificada</label>
+            </div>
+            <div class="input-group input-group-sm sm-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="coroa_obs_desmontagem">
+            </div>
+            <hr>
+
+            <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white" >FILTRO:</p>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="filtro_quebrado_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Quebrado</label>
+            </div>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" name="filtro_amassado_desmontagem" value="Sim">
+                <label class="form-check-label" for="flexSwitchCheckDefault">Amassado</label>
+            </div>
+            <div class="input-group input-group-sm sm-3">
+                <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">Obs:</span>
+                <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;" name="filtro_obs_desmontagem">
+            </div>
+            <hr>
+        </div>
+          
+        
+    </div>
+
+        <footer>
+        <div class="container-fluid">
+        <div class="row">
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label" id="Observacao">Observação</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="obser_obs_desmontagem"></textarea>
+
+          <label for="formFileMultiple" class="form-label" id="inserirFoto">Selecionar Fotor</label>
+          <input class="form-control" type="file" id="formFileMultiple" multiple name="selecionar_foto_desmontagem">
+        </div>
+        </div>
+        </div>
+
+        <div class="d-flex flex-row-reverse">
+        <button type="submit" class="btn btn-primary">ENVIAR FORMULARIO</button>
+        </div>
+      </footer>
+  </form>
+</div>
+
+
+      {% endblock %}

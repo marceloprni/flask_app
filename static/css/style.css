@@ -1,0 +1,11 @@
+
+html{ height:100%; }
+body { background-color: rgb( 217, 217, 217); } 
+.form-control { border: 1px solid black; margin: 10px 0px 0px 0px; text-align: left; }
+.input-group-text {margin-top: 3px; border: 1px solid black; }
+#Observacao { margin-top: 3px; }
+#inserirFoto { margin-top: 5px; }
+.navbar-brand{ margin-left: 5px; }
+.logoNavBar { margin-left: 0px; margin-right: 10px; }
+
+

@@ -1,0 +1,189 @@
+{% extends 'index.html' %}
+{% block content %}
+
+
+<div class="container-fluid">
+
+  <form action="/montagem" method="POST">
+    <div class="row row-cols-2">
+        <div class="col">
+          <span class="input-group-text" id="basic-addon1">OS:</span>
+          <input name = "montagem_ordem" type="text" required class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+          <hr>
+          <span class="input-group-text" id="basic-addon1">OP:</span>
+          <input name = "montagem_op" type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+          <hr>
+          <span class="input-group-text text-break" id="basic-addon2">MODELO:</span>
+          <input name = "montagem_modelo" type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+          <hr>
+          <span class="input-group-text  word-wrap" id="basic-addon3">CONVERSOR DE TORQUE:</span>
+          <input name = "montagem_conversor_torque" type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+          <hr>
+        </div>
+
+        <div class="col">
+          <span class="input-group-text" id="basic-addon4">DATA:</span>
+          <input name = "montagem_data" type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+          <hr>
+          <span class="input-group-text" id="basic-addon5">SÉRIE:</span>
+          <input name = "montagem_serie" type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+          <hr>
+          <span class="input-group-text" id="basic-addon5">NOME DO TÉCNICO:</span>
+          <input name = "montagem_nome" type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+          <hr>
+        </div>
+        
+        <div class="col"> <!-- PRIMEIRO CHECK LADO ESQUERDO INICIO -->
+          <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Tampa Traseira</p>
+          <div class="mb-3">
+            <input name = "montagem_tampa_traseira" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+          </div>
+          <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Carcaça principal</p>
+        <div class="mb-3">
+          <input name = "montagem_carcaca_principal" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Tampa do Bloco Hidráulico</p>
+        <div class="mb-3">
+          <input name = "montagem_tampa_bloco_hidra" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Bloco Hidráulico na transmissão</p>
+        <div class="mb-3">
+          <input name = "montagem_bloco_pre_torque" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o pré-torque Nm">
+        </div>
+        <div class="mb-3">
+          <input name = "montagem_bloco_torque" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque final Nm">
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Porca de rolamento central</p>
+        <div class="mb-3">
+          <input name = "montagem_porca_pre_torque" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o pré-torque Nm">
+        </div>
+        <div class="mb-3">
+          <input name = "montagem_porca_torque" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque final Nm">
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Parafusos do rolamento central</p>
+        <div class="mb-3">
+          <input name = "montagem_parafuso_rolamento" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Parafuso de ancoragem das cintas</p>
+        <div class="mb-3">
+          <input name = "montagem_parafuso_ancoragem" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+        </div>
+        <hr> <!-- PRIMEIRO CHECK LADO ESQUERDO FIM -->
+
+        <!-- SEGUNDO CHECK LADO ESQUERDO INICIO -->
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Parfusos do sensor de pressão</p>
+        <div class="mb-3">
+          <input name = "montagem_parafuso_sensor_pressao" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Parfusos do sensor de rot. De saída</p>
+        <div class="mb-3">
+          <input name = "montagem_parafuso_sensor_rotacao" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+        </div>
+        <hr>
+        <!-- SEGUNDO CHECK LADO ESQUERDO FIM -->
+
+        </div>
+        
+        <div class="col">
+
+        <!-- PRIMEIRO CHECK ESQUERDO INICIO -->
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Carcaça da bomba de óleo</p>
+        <div class="mb-3">
+          <input name = "montagem_carcaca_bomb_oleo_pre_torque" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o pré-torque Nm">
+        </div>
+        <div class="mb-3">
+          <input name = "montagem_carcaca_bomb_oleo_torque" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque final Nm">
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Conjunto da bomba na transmissão</p>
+        <div class="mb-3">
+          <input name = "montagem_conjunto_bomba_pre_torque" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o pré-torque Nm">
+        </div>
+        <div class="mb-3">
+          <input name = "montagem_conjunto_bomba_torque" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque final Nm">
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Parafuso do eixo seletor</p>
+        <div class="mb-3">
+          <input name = "montagem_parafuso_eixo" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Parafuso do trocador de calor</p>
+        <div class="mb-3">
+          <input name = "montagem_parafuso_trocador" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Parafusos da coroa (dif. de Ferro Fundido)</p>
+        <div class="mb-3">
+          <input name = "montagem_parafuso_coroa_ferro" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Parafusos da coroa (dif. de Alumínio)</p>
+        <div class="mb-3">
+          <input name = "montagem_parafuso_coroa_aluminio" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+        </div>
+        <hr><!-- PRIMEIRO CHECK ESQUERDO FIM -->  
+
+        <!-- SEGUNDO CHECK ESQUERDO INICIO -->
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Parfusos da chave seletora (CMF)</p>
+        <div class="mb-3">
+          <input name = "montagem_parafuso_chave_seletora" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Parfusos do sensor do velocímetro</p>
+        <div class="mb-3">
+          <input name = "montagem_parafuso_velocimetro" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">Parfusos do controle de débito do permutador</p>
+        <div class="mb-3">
+          <input name = "montagem_parafuso_controle" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Inserir o torque Nm">
+        </div>
+        <hr>
+         <!-- SEGUNDO CHECK ESQUERDO FIM -->
+
+
+      </div>
+    </div>
+      <footer>
+            
+        <div class="d-flex flex-row-reverse">
+            
+          <button type="submit" class="btn btn-primary">ENVIAR FORMULARIO</button>
+          <button type="button" class="btn btn-danger">GERAR PDF</button>
+        
+        </div>
+    
+      </footer>
+    
+  </form>   
+
+</div>   
+
+
+
+
+
+
+{% endblock %}

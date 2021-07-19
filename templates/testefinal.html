@@ -1,0 +1,138 @@
+{% extends 'index.html' %}
+{% block content %}
+
+
+<div class="container-fluid">
+  
+  <form action="/testefinal" method="POST">
+  
+    <div class="row row-cols-2">
+      <div class="col">
+        <span class="input-group-text" id="basic-addon1">OS:</span>
+        <input name = "teste_final_ordem" type="text" required class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+        <hr>
+        <span class="input-group-text" id="basic-addon1">OP:</span>
+        <input name = "teste_final_op" type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+        <hr>
+        <span class="input-group-text" id="basic-addon2">MODELO:</span>
+        <input name = "teste_final_modelo" type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+        <hr>
+        <span class="input-group-text" id="basic-addon3">CONVERSOR DE TORQUE:</span>
+        <input name = "teste_final_conversor_torque" type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+        <hr>
+      </div>
+      
+      <div class="col">
+        <span class="input-group-text" id="basic-addon4">DATA:</span>
+        <input name = "teste_final_data" type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+        <hr>
+        <span class="input-group-text" id="basic-addon5">SÉRIE:</span>
+        <input name = "teste_final_serie" type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+        <hr>
+        <span class="input-group-text" id="basic-addon5">NOME DO OPERADOR:</span>
+        <input name = "teste_final_nome" type="text" class="form-control" placeholder="Digite Aqui" aria-label="Username" aria-describedby="basic-addon1">
+        <hr>
+      </div>
+      
+      
+      <div class="col">
+       
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">VERIFICAR SE NÃO HÁ CÓDIGOS DE AVARIA</p>
+        <div class="form-check form-switch">
+        <input name = "teste_final_verificar_avaria" value="Sim" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">VERIFICAR SE NÃO HÁ RUÍDOS(DIFERENCIAL)</p>
+        <div class="form-check form-switch">
+        <input name = "teste_final_verificar_ruido" value="Sim" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">TESTE PRESSURIZADO DE VAZAMENTO DE ÓLEO</p>
+        <div class="form-check form-switch">
+        <input name = "teste_final_pressurizado_oleo" value="Sim" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">INSTALAR TRAVA NO CONVERSOR DE TORQUE / TRAVA PARA TRANSPORTE</p>
+        <div class="form-check form-switch">
+        <input name = "teste_final_instalar_trava" value="Sim" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <hr>
+
+        <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px;" class="bg-secondary text-white">AVISOS E OBSERVAÇÕES / ANEXAR FOLHAS DE AVISOS - CONCESSIONÁRIO</p>
+        <div class="form-check form-switch">
+        <input name = "teste_final_avisos_observacoes" value="Sim" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+        </div>
+        <hr>
+
+     
+    </div>
+
+    <div class="col">
+
+      <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px; " class="bg-secondary text-white">PRESSÃO DE LINHA</p>
+      <div class="form-check form-switch">
+        <input name = "teste_final_pressao_linha" value="Sim" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+      </div>
+      <div class="input-group input-group-sm sm-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">VALOR DE P:</span>
+        <input name = "teste_final_pressao_linha_valor" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;">
+      </div>
+      <hr>
+
+      <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px; " class="bg-secondary text-white">AFERIÇÃO DO NÍVEL DE ÓLEO</p>
+      <div class="input-group input-group-sm sm-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm" style=" height: 40px; margin-top: 10.5px; ">VALOR DE P:</span>
+        <input name = "teste_final_afericao_oleo_valor" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" style="height: 40px; margin-top: 10.5px;">
+      </div>
+      <hr>
+
+      <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px; " class="bg-secondary text-white">TESTE DO SISTEMA PARKIN</p>
+      <div class="form-check form-switch">
+        <input name = "teste_final_sistema_parkin" value="Sim" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+      </div>
+      <hr>
+
+      <p style="border: 1px solid rgb(0, 0, 0); margin-top: 3px; text-align: center; border-radius: 5px; " class="bg-secondary text-white">VALIDAÇÃO DO TESTE</p>
+      <div class="form-check form-switch">
+        <input name = "teste_final_validacao" value="Sim" class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+        <label class="form-check-label" for="flexSwitchCheckDefault">Sim</label>
+      </div>
+      <hr>
+    </div>
+
+    </div>
+
+    <footer>
+      <div class="container-fluid">
+          
+        <div class="row">
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label" id="Observacao">Observação</label>
+              <textarea name = "teste_final_observacao" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+        </div>  
+              
+        <div class="d-flex flex-row-reverse">
+              
+          <button type="submit" class="btn btn-primary">ENVIAR FORMULARIO</button>
+          <button type="button" class="btn btn-danger">GERAR PDF</button>
+          
+        </div>
+        
+      </div>
+    </footer>
+
+  </form>
+  </div>
+
+{% endblock %}
