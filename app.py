@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, url_for, redirect
 from models import app, db, Inspecao, Montagem, Teste_final, Expedicao, Desmontagem, Inspecao1, Inspecao2
 from werkzeug.utils import secure_filename
+from flask_cors import CORS
+
+cors = CORS(app, resource={r"/*":{"origins": "*"}})
 
 @app.route("/" )
 @app.route("/index")
